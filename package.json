@@ -1,0 +1,23 @@
+{
+  "name": "WebGame Starter",
+  "version": "1.0.0",
+  "description": "Simple web applications starter",
+  "main": "server.js",
+  "files": [
+  ],
+  "scripts": {
+    "start": "nodejs app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:michalpetrek/easy-web-game-starter.git"
+  },
+  "author": "Michal Petrek",
+  "license": "ISC",
+  "homepage": "",
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

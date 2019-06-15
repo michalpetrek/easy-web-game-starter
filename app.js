@@ -1,4 +1,6 @@
 
+
+const Database = require('./server/lib/Database.js');
 const GameServer = require('./server/GameServer.js');
 
 const path = require('path');
@@ -7,9 +9,18 @@ const app = express();
 const http = require('http').createServer(app);
 const socket = require('socket.io')(http);
 
-const port = 3000;
 
-const server = new GameServer(socket);
+let port = 3000;
+let dbConfig = {
+	host: '10.0.0.101',
+	user: 'devel',
+	password: '23',
+	database: 'spacegame'
+};
+
+
+const database = new Database(dbConfig);
+const server = new GameServer(socket, database);
 
 app.get('/', function(req, res){
 	res.sendFile(__dirname + '/client/index.html');

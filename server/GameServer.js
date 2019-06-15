@@ -3,9 +3,18 @@
 class GameServer 
 {
 
-	constructor(params) 
+	constructor(socket) 
 	{
-		console.log('Starting GameServer...', params);
+		console.log('+ Starting GameServer...');
+
+		this.socket = socket;
+	}
+
+	recieveSocketData(socket, data)
+	{
+		console.log('+ GameServer recieved data: ', data);
+
+		socket.emit('game', 'Run Forrest, run!');
 	}
 
 }
